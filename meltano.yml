@@ -4,3 +4,8 @@ environments:
 - name: dev
 - name: staging
 - name: prod
+plugins:
+  extractors:
+  - name: tap-bigquery
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/tap-bigquery@v0.3.0
