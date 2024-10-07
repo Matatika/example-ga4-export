@@ -9,3 +9,11 @@ plugins:
   - name: tap-bigquery
     variant: matatika
     pip_url: git+https://github.com/Matatika/tap-bigquery@v0.3.0
+    config:
+      stream_maps:
+        analytics_*-events_*:
+          __alias__: events
+          __key_properties__:
+          - event_timestamp
+          - event_name
+          - event_bundle_sequence_id
