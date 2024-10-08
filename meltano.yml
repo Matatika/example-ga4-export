@@ -24,3 +24,8 @@ plugins:
     annotations:
       matatika:
         properties_from_datastore: Warehouse
+jobs:
+- name: BigQuery GA4 export
+  tasks:
+  - - tap-bigquery
+    - target-postgres
