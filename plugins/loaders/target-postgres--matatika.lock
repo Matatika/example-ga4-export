@@ -1,0 +1,183 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-postgres",
+  "namespace": "postgres_transferwise",
+  "variant": "matatika",
+  "label": "Postgres Warehouse",
+  "docs": "https://www.matatika.com/data-details/target-postgres/",
+  "repo": "git+https://github.com/Matatika/pipelinewise-target-postgres@v0.2.0",
+  "pip_url": "git+https://github.com/Matatika/pipelinewise-target-postgres@v0.2.0",
+  "description": "Postgres Warehouse is a data warehousing solution built on top of the Postgres database management system.\n\nPostgres Warehouse is designed to handle large volumes of data and complex queries, making it an ideal solution for businesses that need to store and analyze large amounts of data. It provides a number of features that are specifically tailored to data warehousing, such as columnar storage, parallel processing, and support for advanced analytics. Additionally, Postgres Warehouse is highly scalable, allowing businesses to easily add more resources as their data needs grow. Overall, Postgres Warehouse is a powerful and flexible data warehousing solution that can help businesses make better decisions by providing them with the insights they need to succeed.\n### Prerequisites\nThe process of obtaining the required settings for connecting to a Postgres Warehouse may vary depending on the specific setup and configuration of the database. However, here are some general ways to obtain each of the required settings:\n\n- User: The user is typically created when the database is set up. You can ask the database administrator or check the database documentation to find out the username.\n- Password: The password is also typically created when the database is set up. You can ask the database administrator or check the database documentation to find out the password.\n- Host: The host is the server where the database is located. You can ask the database administrator or check the database documentation to find out the host name or IP address.\n- Port: The port is the number that the database listens on for incoming connections. The default port for Postgres is 5432, but it may be different depending on the configuration. You can ask the database administrator or check the database documentation to find out the port number.\n- Database Name: The database name is the name of the specific database you want to connect to. You can ask the database administrator or check the database documentation to find out the database name.\n- Default Target Schema: The default target schema is the schema that you want to use as the default when connecting to the database. This may be set up by the database administrator or you may need to create it yourself. You can ask the database administrator or check the database documentation to find out the default target schema.",
+  "logo_url": "https://citysprint.matatika.com/assets/logos/loaders/postgres.png",
+  "settings": [
+    {
+      "name": "underscore_camel_case_fields",
+      "kind": "hidden",
+      "value": true,
+      "label": "Underscore Camel Case Fields",
+      "description": "Whether or not to convert field names from camel case to underscore-separated format.",
+      "protected": false
+    },
+    {
+      "name": "password",
+      "kind": "password",
+      "label": "Password",
+      "description": "The password used to authenticate the user.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "port",
+      "kind": "integer",
+      "value": 5432,
+      "label": "Port",
+      "description": "The port number used to connect to the Postgres Warehouse server.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "primary_key_required",
+      "kind": "boolean",
+      "value": false,
+      "label": "Primary Key Required",
+      "description": "Whether or not a primary key is required for the target table.",
+      "protected": false
+    },
+    {
+      "name": "hard_delete",
+      "kind": "hidden",
+      "value": false,
+      "label": "Hard Delete",
+      "description": "Whether or not to perform hard deletes when deleting data from the Postgres Warehouse.",
+      "protected": false
+    },
+    {
+      "name": "dbname",
+      "aliases": [
+        "database"
+      ],
+      "kind": "string",
+      "label": "Database Name",
+      "description": "The name of the database to connect to.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "host",
+      "aliases": [
+        "address"
+      ],
+      "kind": "string",
+      "label": "Host",
+      "description": "The hostname or IP address of the Postgres Warehouse server.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "flush_all_streams",
+      "kind": "hidden",
+      "value": false,
+      "label": "Flush All Streams",
+      "description": "Whether or not to flush all streams to the Postgres Warehouse before closing the connection.",
+      "protected": false
+    },
+    {
+      "name": "parallelism_max",
+      "kind": "hidden",
+      "value": 16,
+      "label": "Max Parallelism",
+      "description": "The maximum number of threads to use when writing data to the Postgres Warehouse.",
+      "protected": false
+    },
+    {
+      "name": "batch_size_rows",
+      "kind": "integer",
+      "value": 100000,
+      "label": "Batch Size Rows",
+      "description": "The number of rows to write to the Postgres Warehouse in each batch.",
+      "protected": false
+    },
+    {
+      "name": "schema_mapping",
+      "kind": "hidden",
+      "label": "Schema Mapping",
+      "description": "A mapping of source schema names to target schema names.",
+      "protected": false
+    },
+    {
+      "name": "add_metadata_columns",
+      "kind": "hidden",
+      "value": true,
+      "label": "Add Metadata Columns",
+      "description": "Whether or not to add metadata columns to the target table.",
+      "protected": false
+    },
+    {
+      "name": "parallelism",
+      "kind": "hidden",
+      "value": 0,
+      "label": "Parallelism",
+      "description": "The number of threads to use when writing data to the Postgres Warehouse.",
+      "protected": false
+    },
+    {
+      "name": "temp_dir",
+      "kind": "hidden",
+      "label": "Temporary Directory",
+      "description": "The directory to use for temporary files when writing data to the Postgres Warehouse.",
+      "protected": false
+    },
+    {
+      "name": "default_target_schema",
+      "kind": "string",
+      "value": "analytics",
+      "label": "Default Target Schema",
+      "description": "The default schema to use when writing data to the Postgres Warehouse.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "ssl",
+      "kind": "hidden",
+      "value": false,
+      "label": "SSL",
+      "description": "Whether or not to use SSL encryption when connecting to the Postgres Warehouse.",
+      "protected": false,
+      "value_post_processor": "stringify"
+    },
+    {
+      "name": "data_flattening_max_level",
+      "kind": "hidden",
+      "value": 10,
+      "label": "Data Flattening Max Level",
+      "description": "The maximum level of nested data structures to flatten when writing data to the Postgres Warehouse.",
+      "protected": false
+    },
+    {
+      "name": "user",
+      "aliases": [
+        "username"
+      ],
+      "kind": "string",
+      "label": "User",
+      "description": "The username used to connect to the Postgres Warehouse.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "default_target_schema_select_permission",
+      "kind": "hidden",
+      "label": "Default Target Schema Select Permission",
+      "description": "The permission level required to select data from the default target schema.",
+      "protected": false
+    },
+    {
+      "name": "validate_records",
+      "kind": "boolean",
+      "value": false,
+      "label": "Validate Records",
+      "description": "Whether or not to validate records before writing them to the Postgres Warehouse.",
+      "protected": false
+    }
+  ]
+}

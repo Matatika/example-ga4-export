@@ -17,3 +17,10 @@ plugins:
           - event_timestamp
           - event_name
           - event_bundle_sequence_id
+  loaders:
+  - name: target-postgres
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.2.0
+    annotations:
+      matatika:
+        properties_from_datastore: Warehouse
