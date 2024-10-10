@@ -24,8 +24,15 @@ plugins:
     annotations:
       matatika:
         properties_from_datastore: Warehouse
+  - name: target-snowflake
+    variant: meltanolabs
+    pip_url: meltanolabs-target-snowflake
 jobs:
 - name: BigQuery GA4 export
   tasks:
   - - tap-bigquery
     - target-postgres
+- name: BigQuery GA4 export to Snowflake
+  tasks:
+  - - tap-bigquery
+    - target-snowflake
