@@ -21,6 +21,8 @@ You can load this repository into Matatika as a workspace to configure and run t
    ```
    under the "Advanced" section
     - If you already have a Matatika account and workspace(s), you can find the "New workspace" option under the workspace context menu (top-left)
+
+   ![image](https://github.com/user-attachments/assets/cd4f527e-0951-41f9-bee4-ead70f260071)
 3. Hit continue and wait for the workspace to create
 4. Follow the prompts to configure the export pipeline(s) you are interested in running
 6. Save the pipelines(s)
