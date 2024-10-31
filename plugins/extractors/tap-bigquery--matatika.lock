@@ -49,7 +49,8 @@
     },
     {
       "name": "google_application_credentials",
-      "kind": "password",
+      "kind": "string",
+      "sensitive": true,
       "label": "Google Application Credentials",
       "description": "JSON content or path to service account credentials.",
       "protected": false,
